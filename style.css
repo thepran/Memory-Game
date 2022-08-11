@@ -1,0 +1,37 @@
+.grid {
+  /* width: 500px; */
+  /* height: 500px; */
+  display: inline-grid;
+  grid-template-columns: 110px 110px 110px 110px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  gap: 2px;
+  /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 94, 247, 1) 17.8%,
+    rgba(2, 245, 255, 1) 100.2%
+  );
+}
+.board-img {
+  width: 80px;
+  height: 80px;
+  /* border: 1px solid green; */
+  /* display: flex;
+  /* gap: 2px; */
+  /* justify-content: center;
+  align-items: center; */
+  cursor: pointer;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  border: 5px solid #2521ac;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
