@@ -81,8 +81,9 @@ window.addEventListener("load", function () {
     cardArray.sort(() => 0.5 - Math.random()); //suffle the items in an array
     for (let i = 0; i < cardArray.length; i++) {
       const card = document.createElement("img");
-      card.setAttribute("src", "images/hogwarts.png");
       card.setAttribute("data-id", i);
+      card.setAttribute("src", cardArray[i].img);
+      card.setAttribute("src", "images/hogwarts.png");
       card.setAttribute("class", "board-img");
       gridEl.append(card);
       card.addEventListener("load", () => (loaderEl.style.display = "none"));
