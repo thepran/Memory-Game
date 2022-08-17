@@ -87,7 +87,9 @@ window.addEventListener("load", function () {
       card.addEventListener("load", () => {
         if (load <= cardArray.length) setBlank();
         load++;
-        loaderEl.style.display = "none";
+        setTimeout(() => {
+          loaderEl.style.display = "none";
+        }, 1000);
       });
       card.setAttribute("class", "board-img");
       gridEl.append(card);
