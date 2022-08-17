@@ -74,7 +74,6 @@ window.addEventListener("load", function () {
   let cardChosenId = []; // store ids of cards
   let move = 0;
   let score = 0;
-  let load = 0;
 
   createBoard();
 
@@ -84,19 +83,13 @@ window.addEventListener("load", function () {
       const card = document.createElement("img");
       card.setAttribute("data-id", i);
       card.setAttribute("src", cardArray[i].img);
-      card.addEventListener("load", () => {
-        if (load <= cardArray.length) setBlank();
-        load++;
-        setTimeout(() => {
-          loaderEl.style.display = "none";
-        }, 1000);
-      });
+      setTimeout(() => {
+        loaderEl.style.display = "none";
+      }, 1000);
       card.setAttribute("class", "board-img");
       gridEl.append(card);
       card.addEventListener("click", flipCard);
-      function setBlank() {
-        card.setAttribute("src", "images/hogwarts.png");
-      }
+      card.setAttribute("src", "images/hogwarts.png");
     }
   }
 
@@ -111,9 +104,9 @@ window.addEventListener("load", function () {
       cardChosenId.pop();
       cardChosen.pop();
     }
-    console.log(this);
+    // console.log(this);
     this.setAttribute("src", cardArray[cardId].img);
-    console.log(this);
+    // console.log(this);
     this.style.transition = "transform 0.2s";
     this.style.transform = "rotateY(-180deg)";
 
@@ -175,7 +168,6 @@ window.addEventListener("load", function () {
     cards.forEach((car) => (car.style.pointerEvents = "auto"));
     move = 0;
     score = 0;
-    load = 0;
     const moveEl = document.querySelector("#blocks h2");
     moveEl.textContent = `Move: ${move}`;
     createBoard();
