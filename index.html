@@ -12,7 +12,27 @@
   </head>
 
   <body>
-    <div class="grid" id="grid"></div>
+    <div class="pre-loader">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="blocks" id="blocks">
+      <h2>Move: 0</h2>
+      <div class="grid" id="grid"></div>
+    </div>
+    <div class="popup">
+      <div class="game-over-display">
+        <div class="container">
+          <h2>You did It...</h2>
+          <p></p>
+          <button>Go Again</button>
+        </div>
+      </div>
+    </div>
     <footer></footer>
 
     <script src="index.js"></script>
