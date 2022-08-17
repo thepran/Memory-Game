@@ -165,6 +165,8 @@ window.addEventListener("load", function () {
     cards.forEach((car) => (car.style.pointerEvents = "auto"));
     move = 0;
     score = 0;
+    const moveEl = document.querySelector("#blocks h2");
+    moveEl.textContent = `Move: ${move}`;
     createBoard();
   }
 });
