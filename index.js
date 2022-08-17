@@ -83,10 +83,10 @@ window.addEventListener("load", function () {
       const card = document.createElement("img");
       card.setAttribute("data-id", i);
       card.setAttribute("src", cardArray[i].img);
+      card.addEventListener("load", () => (loaderEl.style.display = "none"));
       card.setAttribute("src", "images/hogwarts.png");
       card.setAttribute("class", "board-img");
       gridEl.append(card);
-      card.addEventListener("load", () => (loaderEl.style.display = "none"));
       card.addEventListener("click", flipCard);
     }
   }
