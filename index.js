@@ -75,6 +75,15 @@ window.addEventListener("load", function () {
   let move = 0;
   let score = 0;
 
+  // images.map((item) => console.log(item));
+  Promise.all(
+    cardArray.map((item) =>
+      this.fetch(item.img)
+        .then((response) => response.blob())
+        .then(() => (loaderEl.style.display = "none"))
+    )
+  );
+
   createBoard();
 
   function createBoard() {
@@ -82,10 +91,10 @@ window.addEventListener("load", function () {
     for (let i = 0; i < cardArray.length; i++) {
       const card = document.createElement("img");
       card.setAttribute("data-id", i);
-      card.setAttribute("src", cardArray[i].img);
-      setTimeout(() => {
-        loaderEl.style.display = "none";
-      }, 1000);
+      // card.setAttribute("src", cardArray[i].img);
+      // setTimeout(() => {
+      //   loaderEl.style.display = "none";
+      // }, 1000);
       card.setAttribute("class", "board-img");
       gridEl.append(card);
       card.addEventListener("click", flipCard);
